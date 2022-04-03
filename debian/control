@@ -1,0 +1,15 @@
+Source: dyn-gandi
+Section: python
+Priority: optional
+Maintainer: Sébastien NOBILI <code@pipoprods.org>
+Build-Depends: debhelper (>= 9), python3 (>= 3.0)
+Build-Depends-Indep: python-setuptools,
+ python3-setuptools,
+ dh-python,
+Standards-Version: 3.9.4
+X-Python3-Version: >= 3.0
+
+Package: dyn-gandi
+Architecture: all
+Depends: ${misc:Depends}, ${python:Depends}, python3-requests, python3-tldextract, python3-docopt
+Description: Use Gandi LiveDNS API to update DNS records with a dynamic IP

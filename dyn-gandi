@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Gandi LiveDNS API to update DNS records with a dynamic IP.
 
 Usage: dyn_gandi [--help] [--verbose] [--dry-run] [--conf=<c>] [--log=<l>] [--out=<o>] [options]...
@@ -22,10 +24,10 @@ from datetime import datetime
 import docopt as docpt
 import tldextract
 from docopt import docopt
-from ip_resolver import IpResolver, IpResolverError
+from dyn_gandi.ip_resolver import IpResolver, IpResolverError
 
 # options
-from livedns_client import LiveDNSClient
+from dyn_gandi.livedns_client import LiveDNSClient
 
 options = None  # type: dict
 debug = False  # type: bool
@@ -256,7 +258,7 @@ def main():
     if verbose:
         print()
 
-    to_log(message, action, datetime_label=today, dump=True)
+    to_log(message, action, datetime_label=today, dump=verbose)
 
 
 def to_log(message, action, datetime_label=None, dump=False):
